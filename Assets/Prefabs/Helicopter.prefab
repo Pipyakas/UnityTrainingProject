@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3982365920814892242}
   - component: {fileID: 1214102059003349600}
   - component: {fileID: 834126837806360093}
+  - component: {fileID: 337497355}
+  - component: {fileID: 337497354}
   m_Layer: 0
   m_Name: Helicopter
   m_TagString: Untagged
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -764436543
-  m_SortingLayer: -1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6318484107250585120, guid: 1bd60a271428a194589bbea3565266a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -129,3 +131,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0897546, y: 1.04}
   m_EdgeRadius: 0
+--- !u!50 &337497355
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341864017244445963}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &337497354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341864017244445963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e7715fcbb56584b8d992030205175d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
