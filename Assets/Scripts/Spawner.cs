@@ -8,28 +8,34 @@ public class Spawner : MonoBehaviour
     public GameObject soldierPrefab;
     
     public float respawnTime = 1.0f;
-    private Vector2 screenBounds;
+    
+    System.Random rand = new System.Random();
     // Start is called before the first frame update
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        
         StartCoroutine(spawner());
     }
     private void spawnHelicopter(){
         GameObject heli = Instantiate(helicopterPrefab) as GameObject;
-        heli.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
-    }
-    private void spawnSoldier(){
-        GameObject soldier = Instantiate(soldierPrefab) as GameObject;
-        soldier.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+        if (rand.NextDouble() >= 0.5)
+        {
+            heli.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+            heli.transform.position = new Vector2(-Game.Instance.screenBounds.x, Random.Range(Game.Instance.screenBounds.y / 2, Game.Instance.screenBounds.y));
+        }
+        else
+        {
+            heli.transform.Rotate(new Vector3(0, 180, 0));
+            heli.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
+            heli.transform.position = new Vector2(Game.Instance.screenBounds.x, Random.Range(Game.Instance.screenBounds.y / 2, Game.Instance.screenBounds.y));
+        }
+        
     }
 
     IEnumerator spawner(){
         while(true){
             yield return new WaitForSeconds(respawnTime);
             spawnHelicopter();
-            spawnSoldier();
-            Debug.Log("spawned");
         }
     }
 }
