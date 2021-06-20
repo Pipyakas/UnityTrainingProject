@@ -8,9 +8,8 @@ public class Soldier : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
-    private bool isFalling;
-    private static readonly int Fallen = Animator.StringToHash("Fallen");
-
+    private bool isFalling = true;
+    private static readonly int Walking = Animator.StringToHash("Walking");
     public bool bFlipped { get; set; }
     private void Awake()
     {
@@ -19,13 +18,24 @@ public class Soldier : MonoBehaviour
     }
     void Start()
     {
-        animator.SetBool(Fallen,false);
+        animator.SetBool(Walking,false);
         if (!bFlipped)
         {
             gameObject.transform.Rotate(new Vector3(0, 180, 0));
         }
     }
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            animator.SetBool(Walking, true);
+            isFalling = false;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        } else if (other.gameObject.CompareTag("Player"))
+        {
 
+        }
+    }
     private void FixedUpdate()
     {
         if (!isFalling)
@@ -37,6 +47,5 @@ public class Soldier : MonoBehaviour
             }
             rb.MovePosition(Vector3.left * (Time.fixedDeltaTime * speed) + transform.position);
         }
-
     }
 }

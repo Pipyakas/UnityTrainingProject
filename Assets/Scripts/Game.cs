@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
     public static Game Instance;
     public GameObject helicopterPrefab;
     public GameObject soldierPrefab;
+    public GameObject catPrefab;
     
     public float respawnTime = 1.0f;
     
@@ -18,6 +19,7 @@ public class Game : MonoBehaviour
     {
         Instance = this;
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        GameObject cat = Instantiate(catPrefab, new Vector3(0, -4f, 0), Quaternion.identity);
         InvokeRepeating(nameof(spawnHelicopter), 1f, 1f);
     }
     

@@ -10,7 +10,6 @@ public class Helicopter : MonoBehaviour
     private Rigidbody2D rb;
     public int speed;
     public bool bFlipped { get; set; }
-
     private void Awake()
     {
         speed = Random.Range(3, 7);
@@ -22,9 +21,8 @@ public class Helicopter : MonoBehaviour
         {
             gameObject.transform.Rotate(new Vector3(0, 180, 0));
         }
-        InvokeRepeating(nameof(spawnSoldier), 1f, 1f);
+        InvokeRepeating(nameof(spawnSoldier), 1f, Random.Range(2f,3f));
     }
-
     private void FixedUpdate()
     {
         if (bFlipped)
@@ -34,14 +32,12 @@ public class Helicopter : MonoBehaviour
         }
         rb.MovePosition(Vector3.left * (Time.fixedDeltaTime * speed) + transform.position);
     }
-
     void Update()
     {
         if(transform.position.x < -Game.Instance.screenBounds.x * 2 || transform.position.x > Game.Instance.screenBounds.x * 2){
             Destroy(this.gameObject);
         }
     }
-
     private void spawnSoldier()
     {
         GameObject soldier = Instantiate(soldierPrefab) as GameObject;

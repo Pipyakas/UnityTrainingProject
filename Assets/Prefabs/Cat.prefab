@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 928262571364869680}
   - component: {fileID: 928262571364869681}
   - component: {fileID: 928262571364869695}
-  - component: {fileID: 7494956363882202435}
+  - component: {fileID: 143585665}
+  - component: {fileID: 1790626275640221544}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: Cat
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.89}
   m_EdgeRadius: 0
---- !u!114 &7494956363882202435
+--- !u!114 &143585665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,3 +124,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 304034011294208044, guid: 9ea3ca332eccdea41b5b1e272f4d94d0, type: 3}
+--- !u!114 &1790626275640221544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928262571364869683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec648e91db9eb354196b9cc330323d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
