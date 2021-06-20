@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &143585664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 928262571364869683, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
+  m_PrefabInstance: {fileID: 928262571369039047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &143585665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143585664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5179676b7335a42afabed206622600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 304034011294208044, guid: 9ea3ca332eccdea41b5b1e272f4d94d0, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 670014310}
   - component: {fileID: 670014309}
-  - component: {fileID: 670014311}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -237,6 +254,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenBounds: {x: 0, y: 0}
+  helicopterPrefab: {fileID: 5341864017244445963, guid: 61897659e5f85f146a2b0448afd3cf1a, type: 3}
+  soldierPrefab: {fileID: 4535905726341162129, guid: 2f59d0e2b8dbe93419d021ad8c87cb20, type: 3}
+  respawnTime: 1
+  gameObjects: []
+  score: 0
 --- !u!4 &670014310
 Transform:
   m_ObjectHideFlags: 0
@@ -251,21 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &670014311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670014308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581d1ead48d8ce4f8a35d65bfd345c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helicopterPrefab: {fileID: 5341864017244445963, guid: 61897659e5f85f146a2b0448afd3cf1a, type: 3}
-  soldierPrefab: {fileID: 4535905726341162129, guid: 2f59d0e2b8dbe93419d021ad8c87cb20, type: 3}
-  respawnTime: 1
 --- !u!1 &1208519082
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 928262571364869680, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 928262571364869680, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.97
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 928262571364869680, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -486,7 +493,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7494956363882202435, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7494956363882202435, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ac7107702441b746a1a18618b8815c6, type: 3}
 --- !u!1001 &8546363015942089737
 PrefabInstance:

@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e7715fcbb56584b8d992030205175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 4535905726341162129, guid: 2f59d0e2b8dbe93419d021ad8c87cb20, type: 3}
+  explosion: {fileID: 3502175790444348203, guid: d8358dc1dbc2f224eb281049812c4ae6, type: 3}
+  fragments: {fileID: 0}
   speed: 10
-  rb: {fileID: 0}
-  screenBounds: {x: 0, y: 0}

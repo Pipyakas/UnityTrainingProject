@@ -22,6 +22,7 @@ public class Helicopter : MonoBehaviour
         {
             gameObject.transform.Rotate(new Vector3(0, 180, 0));
         }
+        InvokeRepeating(nameof(spawnSoldier), 1f, 1f);
     }
 
     private void FixedUpdate()
@@ -41,10 +42,11 @@ public class Helicopter : MonoBehaviour
         }
     }
 
-    private void SpawnSoldier()
+    private void spawnSoldier()
     {
-        var soldier = Instantiate(soldierPrefab, gameObject.transform.position, Quaternion.identity).GetComponent<Soldier>();
-        soldier.bFlipped = bFlipped;
+        GameObject soldier = Instantiate(soldierPrefab) as GameObject;
+        soldier.transform.position = gameObject.transform.position;
+        soldier.GetComponent<Soldier>().bFlipped = bFlipped;
         Game.Instance.gameObjects.Add(soldier.gameObject);
     }
 }

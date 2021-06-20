@@ -32,6 +32,7 @@ public class Game : MonoBehaviour
             heli.GetComponent<Helicopter>().bFlipped = true;
             heli.transform.position = new Vector2(-Game.Instance.screenBounds.x, Random.Range(Game.Instance.screenBounds.y / 2, Game.Instance.screenBounds.y));
         }   
+        Game.Instance.gameObjects.Add(heli);
     }
 
     void Update()
