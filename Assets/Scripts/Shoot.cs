@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private GameObject currentBullet;
-    private readonly Vector2 spawnPos = new Vector3(0,-3,0);
+    private Vector3 spawnPos = new Vector3(0,-3.3f,0);
     private const float BulletForce = 25f;
     private Cat cat;
     private Vector3 mousePos;
@@ -29,8 +29,7 @@ public class Shoot : MonoBehaviour
             shoot();
         }
     }
-    
-    private void RotateBullet()
+    private void FixedUpdate()
     {
         if (ReferenceEquals(currentBullet, null)) return;
         var lookDir = mousePos - gameObject.transform.position;
